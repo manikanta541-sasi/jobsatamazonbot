@@ -1,0 +1,10 @@
+services:
+  - type: worker
+    name: amazon-job-alert
+    env: python
+    plan: free
+    runtime: python
+    buildCommand: |
+      pip install -r requirements.txt
+      playwright install
+    startCommand: python monitor.py
